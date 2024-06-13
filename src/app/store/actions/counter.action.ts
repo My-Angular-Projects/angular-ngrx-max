@@ -1,9 +1,9 @@
-import { createAction } from '@ngrx/store';
+import { createActionGroup, emptyProps } from '@ngrx/store';
 
-export const counterIncrementAction = createAction(
-  '[COUNTER] Increment Counter'
-);
-
-export const counterDecrementAction = createAction(
-  '[COUNTER] Decrement Counter'
-);
+export const CounterActions = createActionGroup({
+  source: 'Counter',
+  events: {
+    'Increment Counter': emptyProps(),
+    'Decrement Counter': emptyProps(),
+  },
+});
