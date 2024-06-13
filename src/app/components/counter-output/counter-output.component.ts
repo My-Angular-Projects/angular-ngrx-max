@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AsyncPipe } from '@angular/common';
+import { IGlobalState } from '@store/reducers';
 
 @Component({
   selector: 'ngrx-counter-output',
@@ -10,5 +11,7 @@ import { AsyncPipe } from '@angular/common';
   imports: [AsyncPipe],
 })
 export class CounterOutputComponent {
-  public readonly count$ = inject(Store).select('count');
+  public readonly count$ = inject(Store).select(
+    (state: IGlobalState) => state.counter.count
+  );
 }

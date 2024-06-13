@@ -1,6 +1,10 @@
 import { createReducer, on } from '@ngrx/store';
 import { CounterActions } from '@store/actions';
 
+export interface IGlobalState {
+  counter: ICounterState;
+}
+
 export interface ICounterState {
   count: number;
 }
