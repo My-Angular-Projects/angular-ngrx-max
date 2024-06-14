@@ -1,13 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { CounterActions } from '@store/actions';
-
-export interface IGlobalState {
-  counter: ICounterState;
-}
-
-export interface ICounterState {
-  count: number;
-}
+import { ICounterState } from '../../types';
 
 export const INITIAL_STATE: ICounterState = {
   count: 0,
