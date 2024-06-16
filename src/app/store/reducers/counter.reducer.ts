@@ -8,12 +8,12 @@ export const INITIAL_STATE: ICounterState = {
 
 export const counterReducer = createReducer(
   INITIAL_STATE,
-  on(CounterActions.incrementCounter, (state: ICounterState) => ({
+  on(CounterActions.incrementCounter, (state: ICounterState, { value }) => ({
     ...state,
-    count: state.count + 1,
+    count: state.count + value,
   })),
-  on(CounterActions.decrementCounter, (state: ICounterState) => ({
+  on(CounterActions.decrementCounter, (state: ICounterState, { value }) => ({
     ...state,
-    count: state.count - 1,
+    count: state.count - value,
   }))
 );
